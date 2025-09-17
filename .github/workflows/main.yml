@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Print Hello
-        run: echo "Hello, GitHub Actions 🚀"
+        run: echo "Hello, GitHub Actions"
 
       - name: Print branch
         run: echo "Branch: ${{ github.ref }}"
