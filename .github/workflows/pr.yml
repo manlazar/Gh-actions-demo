@@ -1,0 +1,12 @@
+name: PR Workflow
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Acesta este un Pull Request către main 🚀"
