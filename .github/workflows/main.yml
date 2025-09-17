@@ -13,4 +13,6 @@ jobs:
         run: echo "Hello, GitHub Actions"
 
       - name: Print branch
-        run: echo Branch: ${{ github.ref }}
+        run: |
+          echo "Branch:"
+          echo ${{ github.ref }}
