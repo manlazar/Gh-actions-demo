@@ -1,0 +1,12 @@
+name: Nightly Job
+
+on:
+  schedule:
+    - cron: "0 21 * * *"   # rulează zilnic la 21:00 UTC
+  workflow_dispatch:        # îl poți porni și manual
+
+jobs:
+  nightly:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Job programat - rulează zilnic la 21:00 UTC 🌙"
