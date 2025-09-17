@@ -13,3 +13,6 @@ jobs:
 
       - name: Print Hello
         run: echo "Hello, GitHub Actions 🚀"
+
+      - name: Print branch
+        run: echo "Branch: ${{ github.ref }}"
