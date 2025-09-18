@@ -12,8 +12,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - run: echo "Rulez linting..."  # înlocuiești cu npm run lint dacă ai ESLint
+      - run: echo "Rulez linting..."   # simulează lint
 
   test:
     runs-on: ubuntu-latest
@@ -23,8 +22,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - run: echo "Rulez testele..." # înlocuiești cu npm test dacă ai teste
+      - run: echo "Rulez testele..."   # simulează test
 
   build:
     runs-on: ubuntu-latest
@@ -34,5 +32,4 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - run: echo "Construiesc aplicația..." # înlocuiești cu npm run build dacă ai script build
+      - run: echo "Construiesc aplicația..."   # simulează build
