@@ -12,11 +12,21 @@ jobs:
         with:
           node-version: 20
 
-      - name: Cache npm
+      - name: Cache demo folder
         uses: actions/cache@v4
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: .tmp-cache
+          key: demo-cache-${{ runner.os }}-${{ github.sha }}
 
-      - run: npm install
-      - run: echo "Dependințele au fost instalate ✅"
+      - name: Create demo file in cache
+        run: |
+          mkdir -p .tmp-cache
+          date +"%Y-%m-%d %H:%M:%S" > .tmp-cache/timestamp.txt
+          echo "Am salvat timestamp în cache ✅"
+
+      - name: Show cached content
+        run: |
+          echo "Fișiere în cache:"
+          ls -la .tmp-cache
+          echo "Conținut timestamp:"
+          cat .tmp-cache/timestamp.txt
